@@ -1,0 +1,407 @@
+// Обнуление стилей
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Шрифты
+
+@font-face {
+  font-family: "Montserrat Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Montserrat-Regular.woff2') format("woff2"),
+       url('../fonts/Montserrat-Regular.woff') format("woff"),
+}
+
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Montserrat-Medium.woff2') format("woff2"),
+       url('../fonts/Montserrat-Medium.woff') format("woff"),
+}
+
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/Montserrat-Bold.woff2') format("woff2"),
+       url('../fonts/Montserrat-Bold.woff') format("woff"),
+}
+
+@font-face {
+  font-family: "Regal";
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/PFRegalDisplayPro-Medium.woff2') format("woff2"),
+       url('../fonts/PFRegalDisplayPro-Medium.woff') format("woff"),
+}
+
+// Переменные
+
+$montReg: "Montserrat Regular";
+$montMed: "Montserrat Medium";
+$montBold: "Montserrat Bold";
+$regal: "Regal";
+$textColorDarkBlue: #183B56;
+$textColorBlue: #1565D8;
+$textColorLightGrey: #8e8e8e;
+
+// Основные стили
+
+body {
+  font-family: $montReg;
+  background-color: #fff;
+  color: $textColorDarkBlue;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: .3s linear;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #fff;
+  padding: 39px 0 35px;
+  .container {
+    display: flex;
+  }
+  &__logo {
+    span {
+      margin: 6px 109px 0 28px;
+      display: block;
+      min-width: 194px;
+      background: url(../img/mainLogo.png) no-repeat 50%/contain;
+      width: 194px;
+      height: 59px;
+      position: relative;
+      z-index: 3;
+      @media screen and (max-width: 1320px) {
+        margin: 6px 54px 0 22px;
+        min-width: 164px;
+        background: url(../img/mainLogo.png) no-repeat 50%/contain;
+        width: 164px;
+        height: 51px;
+      }
+      @media screen and (max-width: 999px) {
+        margin: 6px 54px 0 0;
+      }
+      @media screen and (max-width: 767px) {
+        margin-top: 0;
+        min-width: 126px;
+        background: url(../img/mainLogo.png) no-repeat 50%/contain;
+        width: 124px;
+        height: 39px;
+      }
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    .contacts {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 27px;
+      &__city {
+        .current-city {
+          display: flex;
+          align-items: flex-start;
+          cursor: pointer;
+          transition: .3s linear;
+          color: #1565d8;
+          margin-left: -30px;
+          &::before {
+            content: "";
+            display: block;
+            background: url(../img/mapDot.png) no-repeat;
+            background-position: 65.9090909090909% 57.52895752895753%;
+            width: 22px;
+            height: 27px;
+            margin-right: 9px;
+            margin-top: -7px;
+          }
+          &::after {
+            content: "";
+            display: block;
+            background: url(../img/arrowCity.png) no-repeat;
+            background-position: 91.24087591240875% 53.79061371841155%;
+            width: 12px;
+            height: 9px;
+            margin-left: 5px;
+            margin-top: 5px;
+          }
+        }
+        .city-adress {
+          display: flex;
+          align-items: center;
+          &__target {
+            color: $textColorBlue;
+            margin-left: 11px;
+            cursor: pointer;
+            white-space: nowrap;
+            @media screen and (max-width: 1320px) {
+              margin-left: 0;
+              margin-top: 2px;
+            }
+          }
+
+          @media screen and (max-width: 1320px) {
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 250px;
+          }
+        }
+        @media screen and (max-width: 1320px) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+      &__phone {
+        margin-left: 50px;
+        .phone-link {
+          font-family: $montBold;
+          font-size: 21px;
+          display: flex;
+          align-items: center;
+          transition: .3s linear;
+          &::before {
+            content: "";
+            display: block;
+            margin-right: 10px;
+            background: url(../img/phoneBlue.png) no-repeat;
+            background-position: 74.52471482889734% 57.088122605363985%;
+            width: 23px;
+            height: 25px;
+            @media screen and (max-width: 767px) {
+              min-width: 30px;
+              background: url(../img/phoneIconBlue.png) no-repeat;
+              background-position: 61.328125% 42.96875%;
+              width: 30px;
+              height: 30px;
+            }
+          }
+          @media screen and (max-width: 1320px) {
+            font-size: 18px;
+          }
+          @media screen and (max-width: 999px) {
+            white-space: nowrap;
+            align-items: flex-start;
+          }
+          @media screen and (max-width: 767px) {
+            max-width: 30px;
+            overflow: hidden;
+          }
+        }
+        .work-time {
+          font-size: 14px;
+          color: $textColorLightGrey;
+          margin-top: 4px;
+          margin-left: 32px;
+          position: relative;
+          span {
+            border-bottom: 0.75px dashed $textColorLightGrey;
+            cursor: pointer;
+            transition: .3s linear;
+          }
+          @media screen and (max-width: 999px) {
+            white-space: nowrap;
+            margin-top: 0;
+          }
+          @media screen and (max-width: 767px) {
+            display: none;
+            margin-left: 27px;
+          }
+        }
+        @media screen and (max-width: 1320px) {
+          margin-right: 15px;
+        }
+        @media screen and (max-width: 999px) {
+          margin: 2px 60px 0 0;
+        }
+        @media screen and (max-width: 767px) {
+          margin-right: 26px;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+      &__btn {
+        font-size: 14px;
+        color: $textColorBlue;
+        width: 168px;
+        height: 37px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(21,101,216,.04);
+        border: 1px solid $textColorBlue;
+        border-radius: 3px;
+        transition: .3s linear;
+        @media screen and (max-width: 999px) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        padding-bottom: 0;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+    .nav-menu {
+      border-top: 1px solid rgba(195,202,217,.2);
+      padding-top: 21px;
+      transition: .3s linear;
+      &__list {
+        display: flex;
+        justify-content: space-between;
+        &__item {
+          font-size: 18px;
+          color: $textColorDarkBlue;
+          @media screen and (max-width: 1320px) {
+            font-size: 16px;
+          }
+        }
+        &__item.nav-menu-dropdown {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          .nav-menu-dropdown__list {
+            position: absolute;
+            padding: 0 20px;
+            background: #fff;
+            //box-shadow: 0 0 20px rgb(0 76 166 / 25%);
+            top: calc(100% + 17px);
+            left: -20px;
+            width: 280px;
+            max-height: 0;
+            overflow: hidden;
+            transition: .3s linear;
+            &::before {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 17px;
+              position: absolute;
+              top: -17px;
+              left: 0;
+            }
+            &__item {
+              margin-bottom: 15px;
+              a {
+                font-size: 16px;
+                color: $textColorDarkBlue;
+              }
+            }
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 5px;
+            margin-left: 6px;
+            background: url(../img/arrowMenu.png) no-repeat 50%;
+            transition: .3s linear;
+          }
+        }
+        @media screen and (max-width: 1320px) {
+          margin-left: -195px;
+        }
+      }
+      @media screen and (max-width: 1320px) {
+        padding-top: 33px;
+      }
+      @media screen and (max-width: 999px) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 1320px) {
+      margin-top: 9px;
+    }
+    @media screen and (max-width: 999px) {
+      margin-top: 14px;
+    }
+    @media screen and (max-width: 767px) {
+      margin-top: 0;
+    }
+  }
+}
+
+
+// Медиазапросы
+
