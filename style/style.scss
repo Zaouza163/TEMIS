@@ -230,10 +230,12 @@ a {
         }
       }
       &__phone {
-        margin-left: 50px;
+        margin-left: auto;
+        margin-right: 56px;
         .phone-link {
           font-family: $montBold;
           font-size: 21px;
+          line-height: 26px;
           display: flex;
           align-items: center;
           transition: .3s linear;
@@ -339,6 +341,17 @@ a {
           margin-top: 4px;
           position: relative;
           z-index: 3;
+        }
+      }
+      &__burger-btn.is-active {
+        .contacts__burger-btn__line:first-child {
+          transform: translateY(-100%) rotate(-45deg);
+        }
+        .contacts__burger-btn__line:nth-child(2) {
+          transform: translateY(-50%) rotate(45deg);
+        }
+        .contacts__burger-btn__line:last-child {
+          display: none;
         }
       }
       @media screen and (max-width: 767px) {
@@ -620,5 +633,342 @@ a {
       margin-top: 0;
     }
   }
+  @media screen and (max-width: 1320px) {
+    padding: 23px 0 26px;
+  }
+  @media screen and (max-width: 999px) {
+    padding: 23px 0 9px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 18px 0;
+  }
 }
-
+.main-banner {
+  width: 100%;
+  margin-top: 201px;
+  background-image: url(../img/mainBannerBack.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  &__background {
+    background: rgba(19, 76, 185, 0.099);
+    mix-blend-mode: normal;
+    border-radius: 5px;
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 34px;
+      padding-bottom: 112px;
+      @media screen and (max-width: 999px) {
+        padding-bottom: 90px;
+      }
+      @media screen and (max-width: 767px) {
+        padding-top: 28px;
+        padding-bottom: 139px;
+        flex-direction: column;
+      }
+      .left-side {
+        .title {
+          color: $textColorDarkBlue;
+          font-family: $regal;
+          font-size: 48px;
+          line-height: 58px;
+          text-align: left;
+          padding-top: 60px;
+          margin-bottom: 30px;
+          @media screen and (max-width: 1320px) {
+            padding-top: 22px;
+            margin-bottom: 28px;
+            font-size: 40px;
+            line-height: 48px;
+          }
+          @media screen and (max-width: 999px) {
+            margin-bottom: 18px;
+            font-size: 36px;
+            line-height: 43px;
+          }
+          @media screen and (max-width: 767px) {
+            padding-top: 0;
+            margin-bottom: 8px;
+            font-size: 28px;
+            line-height: 34px;
+          }
+        }
+        .text {
+          font-family: $montMed;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 36px;
+          color: $textColorDarkBlue;
+          margin-bottom: 48px;
+          span {
+            color: $textColorBlue;
+          }
+          @media screen and (max-width: 1320px) {
+            font-size: 20px;
+            line-height: 36px;
+            margin-bottom: 38px;
+          }
+          @media screen and (max-width: 999px) {
+            margin-bottom: 23px;
+          }
+          @media screen and (max-width: 767px) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 40px;
+          }
+        }
+        .blocks {
+          display: flex;
+          @media screen and (max-width: 999px) {
+            flex-direction: column;
+          }
+          @media screen and (max-width: 767px) {
+            margin-bottom: 20px;
+          }
+          &__block {
+            padding-left: 18px;
+            padding-right: 38px;
+            padding-top: 22px;
+            padding-bottom: 19px;
+            width: 270px;
+            height: 109px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-right: 25px;
+            @media screen and (max-width: 999px) {
+              width: 406px;
+              height: auto;
+              margin-right: 0;
+              margin-bottom: 11px;
+              padding-bottom: 22px;
+              padding-right: 16px;
+              padding-left: 60px;
+            }
+            @media screen and (max-width: 767px) {
+              width: 100%;
+              margin-bottom: 8px;
+            }
+            &__title {
+              display: flex;
+              margin-bottom: 9.7px;
+              @media screen and (max-width: 999px) {
+                margin-left: -35px;
+                margin-bottom: 7px;
+              }
+              @media screen and (max-width: 767px) {
+                margin-bottom: 5.7px;
+              }
+              img {
+                margin-right: 22px;
+                @media screen and (max-width: 767px) {
+                  margin-right: 16px;
+                }
+              }
+              p {
+                color: $textColorDarkBlue;
+                font-family: $montMed;
+                font-size: 20px;
+                line-height: 24px;
+                @media screen and (max-width: 767px) {
+                  font-size: 16px;
+                  line-height: 20px;
+                }
+              }
+            }
+            &__text {
+              font-family: $montReg;
+              font-size: 14px;
+              line-height: 17px;
+              color: #6B869A;
+              @media screen and (max-width: 767px) {
+                font-size: 12px;
+                line-height: 15px;
+              }
+            }
+          }
+        }
+      }
+      .right-side {
+        width: 337px;
+        height: auto;
+        background: #F6F9FD;
+        box-shadow: 0px 15px 50px rgba(0, 76, 166, 0.25);
+        border-radius: 15px;
+        @media screen and (max-width: 1399px) {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          bottom: -156px;
+        }
+        @media screen and (max-width: 999px) {
+          bottom: -170px;
+        }
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+        &__container {
+          padding: 40px 32px;
+          @media screen and (max-width: 1399px) {
+            padding: 37px 42px;
+          }
+          @media screen and (max-width: 999px) {
+            padding-top: 35px;
+            padding-bottom: 18px;
+          }
+          .title {
+            font-family: $montBold;
+            font-size: 21px;
+            line-height: 26px;
+            letter-spacing: 0.2px;
+            color: $textColorDarkBlue;
+            margin-bottom: 15px;
+            span {
+              color: $textColorBlue;
+            }
+            @media screen and (max-width: 1399px) {
+              margin-bottom: 10px;
+            }
+          }
+          .text {
+            font-family: $montReg;
+            text-align: left;
+            font-size: 18px;
+            line-height: 24px;
+            color: $textColorDarkBlue;
+            margin-bottom: 19px;
+            @media screen and (max-width: 1399px) {
+              margin-bottom: 14px;
+            }
+            @media screen and (max-width: 999px) {
+              margin-bottom: 17px;
+            }
+          }
+          .form-container {
+            display: flex;
+            flex-direction: column;
+            @media screen and (max-width: 1399px) {
+              flex-direction: row;
+              align-items: end;
+            }
+            @media screen and (max-width: 999px) {
+              flex-wrap: wrap;
+            }
+            .input-container {
+              @media screen and (max-width: 1399px) {
+                display: flex;
+                flex-direction: column;
+              }
+              label {
+                font-family: $montReg;
+                font-size: 14px;
+                line-height: 14px;
+                margin-bottom: 7px;
+                letter-spacing: 0.02em;
+                color: $textColorLightGrey;
+              }
+              input {
+                width: 100%;
+                height: 56px;
+                padding-left: 13px;
+                background: #FFFFFF;
+                border: 1px solid #C3CAD9;
+                border-radius: 4px;
+                font-family: $montReg;
+                font-size: 16px;
+                color: #353B48;
+                margin-bottom: 8px;
+                @media screen and (max-width: 1399px) {
+                  width: 280px;
+                  margin-bottom: 0;
+                  margin-right: 12px;
+                }
+              }
+            }
+            .green-btn {
+              width: 100%;
+              height: 56px;
+              margin-bottom: 22px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: #00BD6D;
+              border-radius: 5px;
+              border: none;
+              font-family: $montBold;
+              font-size: 16px;
+              line-height: 20px;
+              color: #fff;
+              @media screen and (max-width: 1399px) {
+                width: 280px;
+                margin-bottom: 0;
+                margin-right: 12px;
+              }
+            }
+            .terms {
+              width: 100%;
+              font-family: $montReg;
+              font-size: 12px;
+              line-height: 16px;
+              color: $textColorLightGrey;
+              @media screen and (max-width: 1399px) {
+                width: 280px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+              }
+              @media screen and (max-width: 999px) {
+                width: 100%;
+                height: auto;
+                margin-top: 17px;
+              }
+            }
+          }
+        }
+      }
+      .right-side-mob {
+        display: none;
+        @media screen and (max-width: 767px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .title {
+            font-family: $montBold;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            letter-spacing: 0.2px;
+            color: $textColorDarkBlue;
+            margin-bottom: 15px;
+            span {
+              color: $textColorBlue;
+            }
+          }
+          .text {
+            font-family: $montReg;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+            color: $textColorDarkBlue;
+            margin-bottom: 15px;
+          }
+          .green-btn {
+            width: 280px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #00BD6D;
+            border-radius: 5px;
+            border: none;
+            font-family: $montBold;
+            font-size: 16px;
+            line-height: 20px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
